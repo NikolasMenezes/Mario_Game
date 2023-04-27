@@ -8,28 +8,35 @@
   position: relative;
   width: 700px;
   height: 500px;
-  border: 5px solid;
+  border-bottom: 10px solid green;
   margin: 2rem auto;
   overflow: hidden;
+  background: linear-gradient(0deg, rgb(131, 232, 255) 0%, rgba(0,202,255,1) 100%);
 }
 
-#pipe{
+.pipe{
   position: absolute;
   bottom: 0;
   height: 80px;
   width: 80px;
-  animation: pipeAnimation 4s linear infinite;
+  animation: pipeAnimation 1500ms linear infinite;
 }
 
-#mario{
+.mario{
   position: absolute;
-  bottom: 0;
+  bottom: 0px;
   height: 120px;
-  transition: 800ms;
+}
+
+.clouds{
+  position: absolute;
+  width: 300px;
+  top: 30px;
+  animation: cloudsAnimations 20s linear infinite;
 }
 
 .jump{
-  animation: marioJump .8s;
+  animation: marioJump .5s;
 }
 
 @keyframes pipeAnimation {
@@ -46,11 +53,28 @@
     bottom: 0;
   }
 
+  40%{
+    bottom: 180px;
+  }
+
   50%{
-    bottom: 130px;
+    bottom: 180px;
+  }
+
+  60%{
+    bottom: 180px;
   }
 
   100%{
     bottom: 0;
+  }
+}
+
+@keyframes cloudsAnimations {
+  from{
+    right: -300px;
+  }
+  to{
+    right: 1000px;
   }
 }
