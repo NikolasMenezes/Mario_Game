@@ -8,13 +8,26 @@
   <title>Mario Game</title>
   <link rel="stylesheet" href="css/styles.css">
   <script src="./js/game.js" defer></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 
 <body>
   <div class="game-container">
-    <img src="./img/clouds.png" class="clouds">
-    <img src="./img/pipe.png" class="pipe">
-    <img src="./img/mario-gif.gif" class="mario">
+    <img src="./img/clouds.png" class="clouds hide">
+    <img src="./img/pipe.png" class="pipe hide">
+    <img src="./img/mario-gif.gif" class="mario hide">
+  </div>
+
+  <div class="game-start">
+    <h1 id="game-title">Mario Game</h1>
+    <p>Made with HTML, CSS and JavaScript</p>
+    <button class="start-btn"> <i class="bi bi-play-fill"></i> Play</button>
+  </div>
+
+  <div class="game-over hide">
+    <p>Score: <span id="new-score">0</span></p>
+    <p>Best Score: <span id="best-score">0</span></p>
+    <button class="restart-btn"><i class="bi bi-arrow-clockwise"></i> Restart</button>
   </div>
 </body>
 

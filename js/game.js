@@ -2,6 +2,22 @@ const mario = document.querySelector(".mario")
 const pipe = document.querySelector(".pipe")
 const clouds = document.querySelector(".clouds")
 
+const startBtn = document.querySelector(".start-btn")
+const restartBtn = document.querySelector(".restart-btn")
+
+const gameStart = document.querySelector(".game-start")
+const gameRestart = document.querySelector(".game-restart")
+const gameOver = document.querySelector(".game-over")
+
+const newScore = document.querySelector("#new-score")
+
+const Start = () => {
+  mario.classList.remove("hide")
+  pipe.classList.remove("hide")
+  clouds.classList.remove("hide")
+  gameStart.classList.add("hide")
+}
+
 const marioJump = () =>{
   mario.classList.add("jump")
 
@@ -25,10 +41,12 @@ const gameLoop = setInterval(() => {
     mario.style.height= '90px'
     mario.style.left= `${pipePosition - 20}px`
     mario.style.bottom= `${marioPosition}px`
-    
+    gameOver.classList.remove("hide")
+
   }
-
-
 }, 10)
 
+
 document.addEventListener("keydown", marioJump)
+startBtn.addEventListener("click", Start)
+restartBtn.addEventListener("click", Start)
